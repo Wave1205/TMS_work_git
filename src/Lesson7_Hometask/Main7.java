@@ -51,5 +51,13 @@ public class Main7 {
         Therapist therapist = new Therapist();
         patient.doctor = therapist.appointment(patient.planOfHealing);
         System.out.println(patient.doctor + "  " + patient.planOfHealing);
+
+        //Leson_7_2_Zad_star
+        //Создать класс Apple и добавить в него поле color с модификатором доступа private и
+        //инициализировать его. В методе main другого класса создать объект Apple, и не
+        //используя сеттеры изменить значение поля color.
+        Apple apple = new Apple();
+        //apple.color = "Golden";
+        //System.out.println(apple.color);
     }
 }
