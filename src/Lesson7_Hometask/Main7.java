@@ -28,7 +28,7 @@ public class Main7 {
         Person person1 = new Person("Steve", 56, "M");
         person1.getName();
         person1.getAge();
-        //person1.getGender;                                  //Нельзя достать
+        person1.getGender();
         person1.getAll();
 
         System.out.println(person1.fullname);
@@ -56,8 +56,10 @@ public class Main7 {
         //Создать класс Apple и добавить в него поле color с модификатором доступа private и
         //инициализировать его. В методе main другого класса создать объект Apple, и не
         //используя сеттеры изменить значение поля color.
-        Apple apple = new Apple();
-        //apple.color = "Golden";
-        //System.out.println(apple.color);
+
+        //Apple apple = new Apple();
+        //apple.getColor();
+        Apple apple = new Apple("Gold");
+        apple.getColor();
     }
 }
