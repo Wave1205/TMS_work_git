@@ -1,8 +1,7 @@
 package Lesson9_Hometask;
 
 public abstract class Shape {
-
-    public abstract void area();
-    public abstract void perimeter();
+    public abstract double square();
+    public abstract double perimeter();
 
 }
