@@ -1,10 +1,11 @@
 package Lesson10_Hometask;
 
-public class User {
+public class User implements Cloneable {
     int id;
     String email;
     String role;
     String status;
+    Person person;
 
     public User(int id, String email, String role, String status) {
         this.id = id;
@@ -13,12 +14,21 @@ public class User {
         this.status = status;
     }
 
+    public User(int id, String email, String role, String status, Person person) {
+        this.id = id;
+        this.email = email;
+        this.role = role;
+        this.status = status;
+        this.person = person;
+    }
+
     @Override
     public String toString() {
         return "\tId: \t" + this.id +
                 "\n\temail: \t" + this.email +
                 "\n\trole: \t" + this.role +
-                "\n\tstatus: " + this.status;
+                "\n\tstatus: " + this.status +
+                "\n\tPerson: " + this.person;
     }
 
     @Override
@@ -40,4 +50,26 @@ public class User {
                 (this.status != null && this.status.equals(other.status));
         return this.id == other.id && emailEquals && roleEquals && statusEquals;
     }
+
+    /*@Override
+    public User cloneIn() throws CloneNotSupportedException {
+        return (User) super.clone();
+    }*/
+
+    @Override
+    public User clone() throws CloneNotSupportedException {
+        User newUser = (User) super.clone();
+        Person person = this.person.clone();
+        newUser.person = person;
+        return newUser;
+    }
+
+    /*public void clone(String cloning, int id) {
+
+        if (cloning == "In") {
+            User clonedUser = user4.clone();
+        }
+            //User clonedUser = user4.clone();
+    }*/
+
 }

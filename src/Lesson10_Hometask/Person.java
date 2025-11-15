@@ -13,6 +13,10 @@ public class Person implements Cloneable {
         this.cat = cat;
     }
 
+    public Person(String fullName) {
+        this.fullName = fullName;
+    }
+
     @Override
     public String toString() {
         return ("Full name: " + this.fullName +

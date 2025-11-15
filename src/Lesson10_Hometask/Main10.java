@@ -10,24 +10,25 @@ public class Main10 {
     //1.4 В main создать объект Person, клонировать его, и поменять для копии имя. Проверить в консоли
     // с помощью toString что имена оригинала и копии действительно разные.
     //Сравнить объекты между собой используя equals.
-    Person person = new Person("Maria", 23, 2000, new Cat("Milly", "Maine Coon"));
-    Person clonedPerson = person.clone();
 
-    Boolean result = person.equals(clonedPerson);                 //Why?????
-    System.out.println(result);
+        Person person = new Person("Maria", 23, 2000, new Cat("Milly", "Maine Coon"));
+        Person clonedPerson = person.clone();
 
-    System.out.println("Hash code of person " + person.hashCode());
-    System.out.println("Hash code of clonedPerson " + clonedPerson.hashCode());
+        Boolean result = person.equals(clonedPerson);                 //Why?????
+        System.out.println(result);
 
-    clonedPerson.fullName = "Vasya";
-    System.out.println(person.toString());
-    System.out.println(clonedPerson.toString());
+        System.out.println("Hash code of person " + person.hashCode());
+        System.out.println("Hash code of clonedPerson " + clonedPerson.hashCode());
 
-    System.out.println("Hash code of person " + person.hashCode());
-    System.out.println("Hash code of clonedPerson " + clonedPerson.hashCode());
+        clonedPerson.fullName = "Vasya";
+        System.out.println(person.toString());
+        System.out.println(clonedPerson.toString());
 
-    result = person.equals(clonedPerson);
-    System.out.println(result);
+        System.out.println("Hash code of person " + person.hashCode());
+        System.out.println("Hash code of clonedPerson " + clonedPerson.hashCode());
+
+        result = person.equals(clonedPerson);
+        System.out.println(result);
 
     //Lesson_10_Zad_2_1
     //Создать класс для описания пользователя системы. Переопределить в классе методы
@@ -42,10 +43,23 @@ public class Main10 {
         System.out.println("user2 hashcode: " + user2.hashCode());
         System.out.println("Is user1 equals user2? " + user1.equals(user2));
         System.out.println("Is user1 equals user3? " + user1.equals(user3));
+
     //Lesson_10_Zad_2_star
     //Создать программу для реализации поверхностного и глубокого клонирования объекта
     //класса User. Пусть на вход программе будет передаваться тип операции клонирования
     //(поверхностное клонирование или глубокое), а также id юзера для клонирования.
+
+        User user4 = new User(4, "user4@mail.ru","user","active", new Person("Piter"));
+        User user5 = new User(5, "user5@mail.ru","admin","active");
+        User clonedUser = user4.clone();
+        System.out.println("user4 data: \n" + user4.toString());
+        System.out.println("clonedUser data: \n" + clonedUser.toString());
+
+        System.out.println();
+        clonedUser.role = "admin";
+        clonedUser.person.fullName = "Jony";
+        System.out.println("user4 data: \n" + user4.toString());
+        System.out.println("clonedUser data: \n" + clonedUser.toString());
 
     }
 }
