@@ -2,8 +2,7 @@ package Lesson10_Hometask;
 
 public class Main10 {
     public static void main(String[] args) throws CloneNotSupportedException{
-
-        //Lesson_10_Zad_1_1
+    //Lesson_10_Zad_1_1
     //1.1 Создать класс Person с 3-мя полями (имя, возраст, зарплата).
     //1.2 Переопределить для этого класса hashCode(придумать свою формулу), toString(чтобы
     //выдавал всю информацию по человеку).
@@ -30,11 +29,19 @@ public class Main10 {
     result = person.equals(clonedPerson);
     System.out.println(result);
 
+
+
+    User user1 = new User(1, "user@mail.ru","admin","active");
+    User user2 = new User(1, "user@mail.ru","admin","active");
+    System.out.println(user1.toString());
+    System.out.println(user2.toString());
+
+
+
     //Lesson_10_Zad_2_1
     //Создать класс для описания пользователя системы. Переопределить в классе методы
     //toString,hashcode и equals. Создать несколько экземпляров класса с одним и тем же
     //значением полей и сравнить с помощью метода equals.
-
     //Lesson_10_Zad_2_star
     //Создать программу для реализации поверхностного и глубокого клонирования объекта
     //класса User. Пусть на вход программе будет передаваться тип операции клонирования
