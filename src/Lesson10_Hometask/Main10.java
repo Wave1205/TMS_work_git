@@ -29,19 +29,19 @@ public class Main10 {
     result = person.equals(clonedPerson);
     System.out.println(result);
 
-
-
-    User user1 = new User(1, "user@mail.ru","admin","active");
-    User user2 = new User(1, "user@mail.ru","admin","active");
-    System.out.println(user1.toString());
-    System.out.println(user2.toString());
-
-
-
     //Lesson_10_Zad_2_1
     //Создать класс для описания пользователя системы. Переопределить в классе методы
     //toString,hashcode и equals. Создать несколько экземпляров класса с одним и тем же
     //значением полей и сравнить с помощью метода equals.
+        User user1 = new User(1, "user@mail.ru","admin","active");
+        User user2 = new User(1, "user@mail.ru","admin","active");
+        User user3 = new User(3, "user3@mail.ru","user","closed");
+        System.out.println("user1 data: \n" + user1.toString());
+        System.out.println("user2 data: \n" + user2.toString());
+        System.out.println("user1 hashcode: " + user1.hashCode());
+        System.out.println("user2 hashcode: " + user2.hashCode());
+        System.out.println("Is user1 equals user2? " + user1.equals(user2));
+        System.out.println("Is user1 equals user3? " + user1.equals(user3));
     //Lesson_10_Zad_2_star
     //Создать программу для реализации поверхностного и глубокого клонирования объекта
     //класса User. Пусть на вход программе будет передаваться тип операции клонирования
