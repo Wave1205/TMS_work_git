@@ -49,7 +49,7 @@ public class Main10 {
     //класса User. Пусть на вход программе будет передаваться тип операции клонирования
     //(поверхностное клонирование или глубокое), а также id юзера для клонирования.
 
-        User user4 = new User(4, "user4@mail.ru","user","active", new Person("Piter"));
+        /*User user4 = new User(4, "user4@mail.ru","user","active", new Person("Piter"));
         User user5 = new User(5, "user5@mail.ru","admin","active");
         User clonedUser = user4.clone();
         System.out.println("user4 data: \n" + user4.toString());
@@ -59,7 +59,7 @@ public class Main10 {
         clonedUser.role = "admin";
         clonedUser.person.fullName = "Jony";
         System.out.println("user4 data: \n" + user4.toString());
-        System.out.println("clonedUser data: \n" + clonedUser.toString());
+        System.out.println("clonedUser data: \n" + clonedUser.toString());*/
 
     }
 }

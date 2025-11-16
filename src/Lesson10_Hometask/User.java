@@ -5,7 +5,7 @@ public class User implements Cloneable {
     String email;
     String role;
     String status;
-    Person person;
+    //Person person;                    //Для задания со звёздочкой
 
     public User(int id, String email, String role, String status) {
         this.id = id;
@@ -14,21 +14,23 @@ public class User implements Cloneable {
         this.status = status;
     }
 
-    public User(int id, String email, String role, String status, Person person) {
+    //Для задания со звёздочкой
+    /*public User(int id, String email, String role, String status, Person person) {
         this.id = id;
         this.email = email;
         this.role = role;
         this.status = status;
-        this.person = person;
-    }
+        //this.person = person;
+    }*/
 
     @Override
     public String toString() {
         return "\tId: \t" + this.id +
                 "\n\temail: \t" + this.email +
                 "\n\trole: \t" + this.role +
-                "\n\tstatus: " + this.status +
-                "\n\tPerson: " + this.person;
+                "\n\tstatus: " + this.status
+                //+ "\n\tPerson: " + this.person            //Для задания со звёздочкой
+        ;
     }
 
     @Override
@@ -51,25 +53,18 @@ public class User implements Cloneable {
         return this.id == other.id && emailEquals && roleEquals && statusEquals;
     }
 
+    //Для задания со звёздочкой
     /*@Override
     public User cloneIn() throws CloneNotSupportedException {
         return (User) super.clone();
     }*/
 
-    @Override
+    /*@Override
     public User clone() throws CloneNotSupportedException {
         User newUser = (User) super.clone();
         Person person = this.person.clone();
         newUser.person = person;
         return newUser;
-    }
-
-    /*public void clone(String cloning, int id) {
-
-        if (cloning == "In") {
-            User clonedUser = user4.clone();
-        }
-            //User clonedUser = user4.clone();
     }*/
 
 }
