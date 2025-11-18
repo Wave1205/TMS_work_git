@@ -142,5 +142,70 @@ public class Main {
                 System.out.println("< " + average + ": " + inputs[i] + ", length: " + inputs[i].length());
             }
         }
+
+        //Zad2_1_4
+        //4. Ввести 3 строки с консоли. Найти слово, состоящее только из различных символов.
+        //Если таких слов несколько, найти первое из них.
+        String[] inputs2 = new String[3];
+        for (int k = 0; k < inputs.length; k++) {
+            outerLoop: for (int i = 0; i < inputs[k].length() - 1; i++) {
+                for (int j = i + 1; j < inputs[k].length(); j++) {
+                    if (inputs[k].charAt(i) == inputs[k].charAt(j)) {
+                        System.out.println("A word with repeating letters: " + inputs[k]);
+                        inputs2[k] = inputs[k];
+                        break outerLoop;
+                        //break;
+                    }
+                }
+            }
+        }
+
+        for (String input : inputs2) {
+            System.out.println(input);
+        }
+
+        for (int i = 0; i < inputs.length; i++) {
+            if (inputs[i] != inputs2[i]) {
+                System.out.println("A word with not repeating letters: " + inputs[i]);
+                break;
+            }
+        }
+
+        //Zad2_1_5
+        //Вывести на консоль новую строку, которой задублирована каждая буква из
+        //начальной строки. Например, "Hello" -> "HHeelllloo".
+        String input = "Hello";
+        char[] letters = new char[input.length()];
+        for (int i = 0; i < letters.length; i++) {
+            letters[i] = input.charAt(i);
+        }
+
+        for (char letter : letters) {
+            System.out.print(letter);
+        }
+
+        System.out.println();
+
+        char[] newLetters = new char[input.length() * 2];
+
+        for (int i = 0, j = 0; i < letters.length; i++, j++) {
+            newLetters[j] = letters[i];
+            newLetters[j + 1] = letters[i];
+            j++;
+        }
+
+        for (char letter : newLetters) {
+            System.out.print(letter);
+        }
+
+        //Zad2_star
+        //Дана строка произвольной длины с произвольными словами. Написать программу для
+        //проверки является ли любое выбранное слово в строке палиндромом.
+        //Например, есть строка, вводится число 3, значит необходимо проверить является ли 3-е
+        //слово в этой строке палиндромом.
+        //Предусмотреть предупреждающие сообщения на случаи ошибочных ситуаций: например,
+        //в строке 5 слов, а на вход программе передали число 500.
+
+
     }
 }
