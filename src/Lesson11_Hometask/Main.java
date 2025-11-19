@@ -84,6 +84,7 @@ public class Main {
         System.out.println(str.toString());
 
         //Zad2_1
+        System.out.println("Giv3 3 senteses: ");
         Scanner scanner = new Scanner(System.in);
         String[] inputs = new String[3];
         for (int i = 0; i < inputs.length; i++) {
@@ -206,6 +207,31 @@ public class Main {
         //Предусмотреть предупреждающие сообщения на случаи ошибочных ситуаций: например,
         //в строке 5 слов, а на вход программе передали число 500.
 
+        //Lesson11_Zad_2_star
+        String strStar = "Hello looppool mise bob";
+        String[] wordsStar = strStar.split(" ");
+
+        System.out.print("\nGive the words number: ");
+        //Scanner scanner = new Scanner(System.in);
+        int inputStar = scanner.nextInt();
+
+        if (inputStar > wordsStar.length) {
+            System.out.println("You enter number more than quantity of words in sentese." );
+            return;
+        }
+
+        boolean palindrome = true;
+
+        for (int i = 0, j = wordsStar[inputStar - 1].length()-1; i < wordsStar[inputStar - 1].length() && j >= 0; i++, j--) {
+            if (wordsStar[inputStar - 1].charAt(i) == wordsStar[inputStar - 1].charAt(j)) {
+                palindrome = true;
+            } else {
+                palindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Is " + inputStar + " word a palindrome? " + palindrome);
 
     }
 }
