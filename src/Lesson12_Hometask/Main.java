@@ -7,7 +7,7 @@ public class Main {
 
         String input = "Today my 17th lesson. I’m the best 1! Find me in inst: @teachmeskills";
         String inputNull = "";
-        String inputN = "Hello \\n world \\n !!!";
+        String inputN = "Hello \n world \n !!!";
         String inputGates = "Всем привет!! Меня зовут Билл Гейтс и я мечтаю учиться в TeachMeSkills!";
 
         //1
@@ -17,9 +17,12 @@ public class Main {
         //3
         insta(input);
         //4
-        //findNull(input);             //undone
+        findNull(inputNull);
+        findNull(input);
         //5
-        replaceN(inputN);               //undone
+        replaceN(inputN);
+        //6
+        findFullName(inputGates);
 
     }
 
@@ -46,12 +49,13 @@ public class Main {
         while (matcher.find()) System.out.println(matcher.group());
     }
     //4. Написать метод который возвращает true если строка имеет вид “null”.
-  /*public static void findNull(String str) {
-    Pattern pattern = Pattern.compile("\\W");
-    Matcher matcher = pattern.matcher(str);              //need to think about it more!!!!!!!
-    //while (matcher.find())
-    System.out.println(matcher.find());
-  }*/
+    public static void findNull(String str) {
+        Pattern pattern = Pattern.compile("^$");
+        Matcher matcher = pattern.matcher(str);              //need to think about it more!!!!!!!
+        //while (matcher.find())
+        System.out.println(matcher.find());
+        //System.out.println("str2 is empty: " + str.matches("^$"));
+    }
 
     //5. В строке “Hello \n world \n !!!” заменить \n на “” используя классы Pattern и Matcher.
     public static void replaceN(String text) {
@@ -62,4 +66,13 @@ public class Main {
 
     //6. В строке “Всем привет!! Меня зовут Билл Гейтс и я мечтаю учиться в TeachMeSkills!”
     //найти имя и фамилию человека и вывести на экран!
+    public static void findFullName(String text) {
+        Pattern pattern = Pattern.compile("\\b([A-ZА-Я][a-zа-я]+)\\s+([A-ZА-Я][a-zа-я]+)\\b");
+        Matcher matcher = pattern.matcher(text);              //need to think about it more!!!!!!!
+        while (matcher.find()) {
+            String firstName = matcher.group(1); // Имя
+            String lastName = matcher.group(2);  // Фамилия
+            System.out.println("Найдено: " + firstName + " " + lastName);
+        }
+    }
 }
