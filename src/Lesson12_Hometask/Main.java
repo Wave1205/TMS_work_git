@@ -1,6 +1,7 @@
 package Lesson12_Hometask;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
@@ -23,7 +24,10 @@ public class Main {
         replaceN(inputN);
         //6
         findFullName(inputGates);
-
+        //2.1
+        System.out.println("\nGive string: ");
+        Scanner scanner = new Scanner(System.in);
+        abc(scanner.nextLine());
     }
 
     //1. Написать метод который сможет вернуть все цифры из строки:
@@ -75,4 +79,28 @@ public class Main {
             System.out.println("Найдено: " + firstName + " " + lastName);
         }
     }
+
+    //Вывести в консоль из строки которую пользователь вводит с клавиатуры все
+    //аббревиатуры. Аббревиатурой будем считать слово от 2 до 6 символов, состоящее
+    //только из прописных букв, без чисел.
+
+    //\\b[A-Z]{2,6}\\b
+    public static void abc(String str) {
+        Pattern pattern = Pattern.compile("\\b[A-Z]{2,6}\\b");
+        Matcher matcher = pattern.matcher(str);              //need to think about it more!!!!!!!
+        while (matcher.find()) System.out.println(matcher.group());
+        //System.out.println(matcher.find());
+        //System.out.println(matcher.group());
+    }
+
+
+    //Программа на вход получает произвольный текст. В этом тексте может быть номер
+    //документа(один или несколько), емейл и номер телефона. Номер документа в формате:
+    //xxxx-xxxx-xx, где x - это любая цифра; номер телефона в формате: +(xx)xxxxxxx. Документ
+    //может содержать не всю информацию, т.е. например, может не содержать номер
+    //телефона, или другое. Необходимо найти эту информацию и вывести в консоль в
+    //формате:
+    //email: teachmeskills@gmail.com
+    //document number: 1423-1512-51
+    //и т.д
 }
