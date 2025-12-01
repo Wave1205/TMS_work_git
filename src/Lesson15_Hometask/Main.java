@@ -22,29 +22,29 @@ public class Main {
         countries.add("Belarus");
         countries.add("China");
         countries.add("Russia");
-        for (int i = 0; i < countries.size(); i++) {
-            System.out.print(countries.get(i) + "  ");
+        for (String country : countries) {
+            System.out.print(country + "  ");
         }
         //1.3 Заменить 2-й элемент.
         //.set(index,"")
         countries.set(1, "France");
         System.out.println("\nset: ");
-        for (int i = 0; i < countries.size(); i++) {
-            System.out.print(countries.get(i) + "  ");
+        for (String country : countries) {
+            System.out.print(country + "  ");
         }
         //1.4 Удалить его по индексу.
         //.remove(index)
         countries.remove(1);
         System.out.println("\nremove: ");
-        for (int i = 0; i < countries.size(); i++) {
-            System.out.print(countries.get(i) + "  ");
+        for (String country : countries) {
+            System.out.print(country + "  ");
         }
         //1.5 Удалить любой элемент по значению.
         //.remove("")
         countries.remove("Russia");
         System.out.println("\nremove: ");
-        for (int i = 0; i < countries.size(); i++) {
-            System.out.print(countries.get(i) + "  ");
+        for (String country : countries) {
+            System.out.print(country + "  ");
         }
         //1.6 Узнать индекс любого элемента.
         //.indexOf("")
