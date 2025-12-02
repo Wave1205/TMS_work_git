@@ -5,13 +5,51 @@ public class Main {
 
     public static void main(String[] args) {
 
+        //Zad1_1
         arrayList();
         System.out.println();
+        //Zad1_2
         linkedList();
         System.out.println();
+        //Zad1_3
         hashSet();
+        System.out.println();
+
+        //Zad1_4
+        Storage<Integer> integerStorage = new Storage<>(456);
+        System.out.println(integerStorage.getSlot());
+        integerStorage.setSlot(235);
+        System.out.println(integerStorage.getSlot());
+
+        Storage<String> StringStorage = new Storage<>();
+        System.out.println(StringStorage.getSlot());
+        StringStorage.setSlot("Mursic");
+        System.out.println(StringStorage.getSlot());
+        System.out.println();
+
+        //Zad2_1
+        string();
+        System.out.println();
+
+        //Zad2_2
+        Animals animals = new Animals();
+        animals.addAnimal("Cow");
+        animals.addAnimal("Rabbit");
+        animals.addAnimal("Cat");
+        animals.addAnimal("Dog");
+        animals.addAnimal("Bird");
+        System.out.println(animals.getAnimals());
+
+        animals.removeAnimal();
+        System.out.println(animals.getAnimals());
+
+        animals.removeAnimal();
+        animals.removeAnimal();
+        System.out.println(animals.getAnimals());
 
     }
+
+
 
     //Zad1_1
     public static void arrayList() {
@@ -110,21 +148,38 @@ public class Main {
         System.out.println(people.contains(person2));
     }
 
-    //Zad1_4
-    //Создать дженерик класс Storage с полем того типа который передаем в дженерик при
-    //создании объекта. Сделать конструктор по дефолту и конструктор с этим полем.
-    //Добавить геттеры/сеттеры. В методе main создать 2 объекта на основе этого дженерика и
-    //проверить их работу.
+    //Zad2_1
+    //Пользователь вводит набор чисел в виде одной строки с клавиатуры. Например: "1, 2, 3,
+    //4, 4, 5". Избавиться от повторяющихся элементов в строке. Вывести результат на экран.
+    //При решении использовать коллекции.
+    public static void string() {
+        System.out.println("Give string: ");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        ArrayList<String> elementsList = new ArrayList<String>();
+        //input.trim();
+        String[] elements = input.split(", ");
+
+        /*for (String element : elements) {
+            //elementsList.add(element);
+            System.out.print(element + "  ");
+        }*/
+
+        System.out.println();
+        elementsList.add(elements[0]);
+        for (int i = 0, j = 1; i < elements.length && j < elements.length; i++, j++) {
+            if (elements[i].equals(elements[j])) {
+
+            } else {
+                elementsList.add(elements[j]);
+            }
+        }
+
+        for (String element : elementsList) {
+            System.out.print(element + "  ");
+        }
+    }
+
 
 }
-
-//создать коллекцию Arraylist стран мира
-//добавить к этому списку 3 страны вывести результаты в консоль
-//заменить второй элемент
-//list.get(0) size set(1, "")
-
-//удалить его по индексу
-//удалить любой элемент по значению
-//узнать индекс любого элемента
-//проверить содержится ли элемент в коллекции любой
-//contains
